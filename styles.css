@@ -425,7 +425,7 @@ footer p {
 }
 
 .supervision-note {
-    margin: 24px 0 0 167px;
+    margin: 24px 0 0;
     padding: 25px 28px;
     border-left: 3px solid #315f55;
     background: #f2f0e9;
