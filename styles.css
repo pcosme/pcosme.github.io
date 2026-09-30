@@ -304,3 +304,209 @@ footer p {
         margin-left: 0;
     }
 }
+
+
+/* CV page */
+.cv-page {
+    background: #fbfaf7;
+    color: #26302d;
+}
+
+.cv-page .container {
+    height: auto;
+    min-height: calc(100vh - 52px);
+}
+
+.cv-page .sidebar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.cv-page .main-content {
+    box-sizing: border-box;
+    max-width: 1050px;
+    padding: clamp(45px, 7vw, 100px);
+    text-align: left;
+}
+
+.cv-intro {
+    max-width: 760px;
+    margin-bottom: clamp(65px, 8vw, 105px);
+}
+
+.cv-intro h1 {
+    margin: 12px 0 24px;
+    color: #26302d;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.cv-intro .intro-lead {
+    max-width: 690px;
+    margin: 0;
+}
+
+.cv-section {
+    margin: 0;
+    padding: 48px 0;
+    border-top: 1px solid #cbd1ce;
+}
+
+.cv-featured-entry {
+    display: grid;
+    grid-template-columns: 135px minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 25px;
+    padding: 30px;
+    background: #e3ece7;
+}
+
+.cv-featured-entry time,
+.cv-entry time {
+    color: #92543d;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+
+.cv-featured-entry h2 {
+    margin: -5px 0 5px;
+    color: #26302d;
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-weight: normal;
+}
+
+.cv-featured-entry p {
+    max-width: 620px;
+    margin: 7px 0 0;
+}
+
+.cv-list {
+    margin-top: 22px;
+}
+
+.cv-entry {
+    display: grid;
+    grid-template-columns: 135px minmax(0, 1fr);
+    gap: 32px;
+    padding: 23px 0;
+    border-bottom: 1px solid #dfe3e0;
+}
+
+.cv-entry:last-child {
+    border-bottom: 0;
+}
+
+.cv-entry h3,
+.supervision-note h3 {
+    margin: -5px 0 5px;
+    color: #26302d;
+    font-size: 1.28rem;
+    font-weight: normal;
+}
+
+.cv-entry p {
+    max-width: 650px;
+    margin: 5px 0 0;
+    color: #53605c;
+}
+
+.cv-entry .cv-institution,
+.cv-featured-entry .cv-institution {
+    color: #315f55;
+    font-family: Arial, sans-serif;
+    font-size: 0.86rem;
+    font-weight: bold;
+}
+
+.supervision-note {
+    margin: 24px 0 0 167px;
+    padding: 25px 28px;
+    border-left: 3px solid #315f55;
+    background: #f2f0e9;
+}
+
+.supervision-note p {
+    max-width: 620px;
+    margin: 7px 0 0;
+    color: #53605c;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.cv-page footer {
+    box-sizing: border-box;
+    position: static;
+    width: calc(100% - 290px);
+    margin-left: 290px;
+}
+
+@media (max-width: 760px) {
+    .cv-page .container {
+        display: block;
+    }
+
+    .cv-page .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .cv-page .profile-picture {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .cv-page .profile-picture img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cv-page .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin: 0;
+    }
+
+    .cv-page .navigation li {
+        margin: 0;
+    }
+
+    .cv-page .main-content {
+        padding: 45px 24px;
+    }
+
+    .cv-featured-entry,
+    .cv-entry {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .supervision-note {
+        margin-left: 0;
+    }
+
+    .cv-page footer {
+        width: 100%;
+        margin-left: 0;
+    }
+}
