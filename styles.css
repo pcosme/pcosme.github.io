@@ -510,3 +510,219 @@ footer p {
         margin-left: 0;
     }
 }
+
+
+/* Publications page */
+.publications-page {
+    background: #fbfaf7;
+    color: #26302d;
+}
+
+.publications-page .container {
+    height: auto;
+    min-height: calc(100vh - 52px);
+}
+
+.publications-page .sidebar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.publications-page .main-content {
+    box-sizing: border-box;
+    max-width: 1050px;
+    padding: clamp(45px, 7vw, 100px);
+    text-align: left;
+}
+
+.publications-intro {
+    max-width: 790px;
+    margin-bottom: clamp(65px, 8vw, 105px);
+}
+
+.publications-intro h1 {
+    margin: 12px 0 24px;
+    color: #26302d;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.publications-intro .intro-lead {
+    max-width: 740px;
+    margin-bottom: 18px;
+}
+
+.publications-note {
+    max-width: 720px;
+    color: #53605c;
+    font-size: 0.92rem;
+}
+
+.publications-note a,
+.publication-link {
+    color: #92543d;
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+
+.publications-section {
+    margin: 0;
+    padding: 48px 0;
+    border-top: 1px solid #cbd1ce;
+}
+
+.book-feature {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 25px;
+    padding: 34px;
+    background: #e3ece7;
+}
+
+.book-feature h2 {
+    max-width: 680px;
+    margin: 7px 0 11px;
+    font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+    font-weight: normal;
+    line-height: 1.12;
+}
+
+.book-feature h2 a {
+    color: #26302d;
+    text-decoration: none;
+}
+
+.book-feature h2 a:hover {
+    color: #92543d;
+    text-decoration: underline;
+}
+
+.publication-list {
+    margin-top: 22px;
+}
+
+.publication-entry {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 32px;
+    padding: 27px 0 30px;
+    border-bottom: 1px solid #dfe3e0;
+}
+
+.publication-entry:last-child {
+    border-bottom: 0;
+}
+
+.publication-year {
+    padding-top: 3px;
+    color: #92543d;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+
+.publication-status {
+    margin: 0 0 7px;
+    color: #587069;
+    font-family: Arial, sans-serif;
+    font-size: 0.69rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.publication-entry h3 {
+    max-width: 720px;
+    margin: 0 0 10px;
+    color: #26302d;
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    font-weight: normal;
+    line-height: 1.23;
+}
+
+.publication-authors,
+.publication-venue {
+    max-width: 720px;
+    margin: 6px 0 0;
+    color: #53605c;
+    font-size: 0.91rem;
+    line-height: 1.5;
+}
+
+.author-self {
+    color: #92543d;
+    font-family: Arial, sans-serif;
+    font-size: 0.94em;
+    font-weight: bold;
+}
+
+.publication-link {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.publications-page footer {
+    box-sizing: border-box;
+    position: static;
+    width: calc(100% - 290px);
+    margin-left: 290px;
+}
+
+@media (max-width: 760px) {
+    .publications-page .container {
+        display: block;
+    }
+
+    .publications-page .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .publications-page .profile-picture {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .publications-page .profile-picture img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .publications-page .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin: 0;
+    }
+
+    .publications-page .navigation li {
+        margin: 0;
+    }
+
+    .publications-page .main-content {
+        padding: 45px 24px;
+    }
+
+    .book-feature,
+    .publication-entry {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .publications-page footer {
+        width: 100%;
+        margin-left: 0;
+    }
+}
