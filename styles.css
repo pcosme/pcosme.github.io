@@ -1,6 +1,6 @@
 body {
-    /*font-family: Arial, sans-serif;*/
-       font-family: 'Bodoni Moda';font-size: 18px;
+    font-family: "Bodoni Moda", "Times New Roman", serif;
+    font-size: 18px;
     margin: 0;
     padding: 0;
 }
@@ -14,7 +14,7 @@ body {
     width: 250px;
     background-color: #f4f4f4;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .profile-picture {
@@ -44,10 +44,15 @@ body {
     font-size: 18px;
 }
 
+.navigation a.active {
+    color: #92543d;
+    font-weight: bold;
+}
+
 .main-content {
     flex: 1;
     padding: 20px;
-    max-width: 1000px; /* Added max-width to constrain text blocks */
+    max-width: 1000px;
     text-align: justify;
 }
 
@@ -56,14 +61,16 @@ section {
 }
 
 h1 {
-  font-family:'Bodoni Moda SC';  
+    font-family: "Bodoni Moda SC", "Times New Roman", serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #333;
 }
 
-p, ul {
+p,
+ul {
     line-height: 1.6;
 }
 
@@ -97,22 +104,199 @@ footer p {
     color: #666;
 }
 
-
-/* Drop caps styling for specific paragraphs */
+/* Drop caps styling retained for the other pages. */
 .drop-cap::first-letter {
     float: left;
-    font-size: 310%; /* Adjust size as needed */
+    font-size: 310%;
     line-height: 1;
     padding-right: 6px;
     margin-top: 1px;
-    /*font-weight: bold;*/
 }
 
+/* Homepage redesign: the original sidebar geometry is retained. */
+.home-page {
+    background: #fbfaf7;
+    color: #26302d;
+}
 
+.home-page .container {
+    height: auto;
+    min-height: calc(100vh - 52px);
+}
 
+.home-page .sidebar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
 
+.home-page .main-content {
+    box-sizing: border-box;
+    max-width: 1050px;
+    padding: clamp(45px, 7vw, 100px);
+    text-align: left;
+}
 
+.home-intro {
+    max-width: 790px;
+    margin-bottom: clamp(75px, 10vw, 130px);
+}
 
+.role,
+.section-label {
+    color: #587069;
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
 
+.home-intro h1 {
+    margin: 12px 0 28px;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 1;
+}
 
+.hero-title {
+    max-width: 750px;
+    margin: 0 0 28px;
+    color: #26302d;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-weight: normal;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
 
+.hero-title em {
+    color: #315f55;
+}
+
+.intro-lead {
+    max-width: 740px;
+    margin-bottom: 20px;
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    line-height: 1.5;
+}
+
+.intro-copy {
+    max-width: 680px;
+    color: #53605c;
+}
+
+.home-bottom {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(35px, 7vw, 90px);
+    margin-bottom: 0;
+    padding: 52px 0;
+    border-top: 1px solid #cbd1ce;
+    border-bottom: 1px solid #cbd1ce;
+}
+
+.home-bottom p {
+    max-width: 540px;
+}
+
+.contact-block h2 {
+    margin: 13px 0 12px;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-weight: normal;
+}
+
+.arrow-link,
+.profile-links a {
+    color: #92543d;
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+
+.email-address {
+    display: inline-block;
+    color: #315f55;
+    font-family: Arial, sans-serif;
+    font-size: 0.94rem;
+    font-weight: bold;
+}
+
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+    margin: 0;
+    padding: 30px 0 15px;
+}
+
+.profile-links .section-label {
+    margin-right: 12px;
+}
+
+.home-page footer {
+    box-sizing: border-box;
+    position: static;
+    width: calc(100% - 290px);
+    margin-left: 290px;
+}
+
+@media (max-width: 760px) {
+    .home-page .container {
+        display: block;
+    }
+
+    .home-page .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .home-page .profile-picture {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .home-page .profile-picture img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .home-page .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin: 0;
+    }
+
+    .home-page .navigation li {
+        margin: 0;
+    }
+
+    .home-page .main-content {
+        padding: 45px 24px;
+    }
+
+    .home-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-block {
+        padding-top: 30px;
+        border-top: 1px solid #cbd1ce;
+    }
+
+    .profile-links {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-page footer {
+        width: 100%;
+        margin-left: 0;
+    }
+}
