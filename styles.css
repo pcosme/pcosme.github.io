@@ -726,3 +726,14 @@ footer p {
         margin-left: 0;
     }
 }
+
+.inline-link {
+  color: inherit;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+  color: #a24f38; /* use your website's accent colour */
+}
