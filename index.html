@@ -6,6 +6,8 @@
     <meta name="description" content="Pedro Cosme is a physicist studying hydrodynamics, nonlinear waves, and chiral fluids.">
     <title>Pedro Cosme | Physics of flow, waves &amp; chirality</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/research-map.css">
+    <script src="assets/research-map.js" defer></script>
 </head>
 <body class="home-page">
     <div class="container">
@@ -58,6 +60,36 @@
                 </div>
             </section>
 
+            <details class="research-interests" id="research-interests">
+                <summary><span id="research-interests-title">Research interests</span></summary>
+                <div class="research-interests-panel">
+                    <p class="research-map-help" id="research-map-help" hidden>
+                        Hover to explore. Click or tap an area to keep it open; select it again to release it.
+                    </p>
+                    <div id="research-map" aria-labelledby="research-interests-title" hidden>
+                        <div class="pl-paper">
+                            <div class="pl-host">
+                                <svg class="pl-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="research-map-title research-map-description"></svg>
+                                <div class="pl-actions" role="group" aria-label="Explore research fields" aria-describedby="research-map-help"></div>
+                            </div>
+                            <p class="pl-status" aria-live="polite" aria-atomic="true">All fields</p>
+                        </div>
+                    </div>
+                    <noscript>
+                        <div class="research-map-fallback">
+                            <p>Emergence connects my interests across five overlapping fields:</p>
+                            <ul>
+                                <li><strong>Classical field theory:</strong> transport equations, hydrodynamics, nonlinear waves and symmetry breaking.</li>
+                                <li><strong>Dynamical systems:</strong> low-dimensional models, bifurcations and instabilities, coupled oscillators and synchronisation.</li>
+                                <li><strong>Statistical physics:</strong> kinetic theory, non-equilibrium physics, phase transitions, collective order and coarse-graining.</li>
+                                <li><strong>Condensed matter:</strong> solid-state quantum plasmas and electron hydrodynamics, soft matter and active matter.</li>
+                                <li><strong>Biophysics:</strong> microswimmers, active matter and their connections to synchronisation and collective behaviour.</li>
+                            </ul>
+                        </div>
+                    </noscript>
+                </div>
+            </details>
+
             <section class="profile-links" aria-label="Academic profiles">
                 <span class="section-label">Elsewhere</span>
                 <a href="https://orcid.org/0000-0001-6754-7762">ORCID <span aria-hidden="true">↗</span></a>
@@ -69,7 +101,7 @@
     </div>
 
     <footer>
-        <p>Last updated: September 30, 2026</p>
+        <p>Last updated: October 5, 2026</p>
     </footer>
 </body>
 </html>

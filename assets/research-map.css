@@ -1,0 +1,126 @@
+/* The map follows the homepage's existing light palette and serif typography. */
+.home-page .main-content { min-width: 0; }
+
+.research-interests {
+  margin: 0;
+  border-bottom: 1px solid #cbd1ce;
+}
+
+.research-interests > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 27px 0;
+  color: #26302d;
+  font-family: "Bodoni Moda", "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: normal;
+  list-style: none;
+  cursor: pointer;
+}
+
+.research-interests > summary::-webkit-details-marker { display: none; }
+.research-interests > summary::marker { content: ''; }
+.research-interests > summary::after {
+  content: '+';
+  color: #315f55;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.research-interests[open] > summary::after { content: '−'; }
+.research-interests > summary:hover { color: #315f55; }
+
+.research-interests-panel { padding: 0 0 30px; }
+.research-map-help {
+  max-width: 600px;
+  margin: 0 0 22px;
+  color: #53605c;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.research-map-fallback { color: #53605c; }
+.research-map-fallback li { margin-bottom: 12px; }
+
+#research-map { padding: 0; color-scheme: light; }
+#research-map .pl-paper {
+  --pl-paper: #fbfaf7;
+  --pl-ink: #3f4543;
+  --pl-muted: #67726b;
+  --pl-classical: #dbcff0;
+  --pl-classical-edge: #b2a2ca;
+  --pl-dynamical: #f3d6c2;
+  --pl-dynamical-edge: #cfac93;
+  --pl-statistical: #cfe3eb;
+  --pl-statistical-edge: #9dbbc8;
+  --pl-condensed: #dce9d4;
+  --pl-condensed-edge: #afc2a4;
+  --pl-biophysics: #f1ced4;
+  --pl-biophysics-edge: #cba7b2;
+  --pl-transport: #c7b7e1;
+  --pl-hydro: #eee8f6;
+  --pl-kinetic: #a9cddc;
+  --pl-soft: #b9d2b2;
+  --pl-active: #a1c29a;
+  --pl-small: #faf6e9;
+  --pl-emergence: #f3dfaa;
+  color: var(--pl-ink);
+  background: var(--pl-paper);
+  border-radius: 0;
+  padding: 0;
+}
+#research-map .pl-host { width: 100%; position: relative; }
+#research-map .pl-svg { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
+#research-map .pl-svg text { fill: var(--pl-ink); }
+#research-map .pl-main-region {
+  fill-opacity: .53;
+  transition: fill-opacity 220ms ease, filter 220ms ease;
+}
+#research-map [data-exploring="true"] .pl-main-region { fill-opacity: .35; }
+#research-map .pl-main-region[data-emphasis="context"] { fill-opacity: .50; }
+#research-map .pl-main-region[data-emphasis="primary"] { fill-opacity: .88; filter: saturate(1.55); }
+#research-map .pl-main-region[data-keyboard="true"] { stroke: var(--pl-ink); stroke-width: 2; stroke-opacity: .85; }
+#research-map [data-topic],
+#research-map [data-connection] { opacity: 0; transition: opacity 220ms ease; }
+#research-map [data-topic][data-emphasis="primary"],
+#research-map [data-connection][data-shown="true"] { opacity: 1; }
+#research-map [data-topic][data-emphasis="context"] { opacity: .83; }
+#research-map path[data-topic][data-emphasis="structure"] { opacity: .33; }
+#research-map text[data-topic][data-emphasis="structure"] { opacity: .65; }
+#research-map .pl-domain-label { transition: opacity 220ms ease; }
+#research-map [data-exploring="true"] .pl-domain-label { opacity: .70; }
+#research-map .pl-domain-label[data-emphasis="primary"] { opacity: 1; }
+#research-map .pl-actions { position: absolute; inset: 0; pointer-events: none; }
+#research-map .pl-area-trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  appearance: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+#research-map .pl-status {
+  margin: 2px 0 0;
+  min-height: 18px;
+  text-align: center;
+  color: var(--pl-muted);
+  font: 400 12px/1.5 Arial, Helvetica, sans-serif;
+}
+@media (prefers-reduced-motion: reduce) {
+  #research-map .pl-svg * { transition: none; }
+}
+
+/* Let the diagram use the screen width while the disclosure stays text-aligned. */
+@media (max-width: 480px) {
+  .research-interests-panel { margin-inline: -24px; }
+  .research-map-help,
+  .research-map-fallback { margin-inline: 24px; }
+}
