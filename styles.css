@@ -137,7 +137,7 @@ footer p {
 
 .home-page .main-content {
     box-sizing: border-box;
-    max-width: 1050px;
+    max-width: 1400px;
     padding: clamp(45px, 7vw, 100px);
     text-align: left;
 }
@@ -760,7 +760,7 @@ footer p {
 .research-page .main-content {
     box-sizing: border-box;
     min-width: 0;
-    max-width: 1050px;
+    max-width: 1400px;
     padding: clamp(45px, 7vw, 100px);
     text-align: left;
 }
@@ -805,9 +805,13 @@ footer p {
 }
 
 .research-project > summary {
-    display: grid;
-    grid-template-columns: 54px minmax(0, 1fr) 34px;
+    //display: grid;
+    //grid-template-columns: 54px minmax(0, 1fr) 34px;
+    //grid-template-columns: minmax(0, 1fr) auto;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    //align-items: center;
     gap: 22px;
     padding: 30px 0;
     color: #26302d;
@@ -833,13 +837,29 @@ footer p {
     outline-offset: 7px;
 }
 
-.research-project-number {
+.research-project > summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    margin-left: 20px;
+    color: #315f55;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.research-project[open] > summary::after {
+    content: "−";
+}
+
+/*
+.research-project-number{
     color: #92543d;
     font-family: Arial, sans-serif;
     font-size: 0.72rem;
     font-weight: bold;
     letter-spacing: 0.11em;
-}
+}*/
 
 .research-project-title {
     max-width: 720px;
@@ -850,6 +870,7 @@ footer p {
     transition: color 160ms ease;
 }
 
+/*
 .research-project-toggle {
     position: relative;
     width: 30px;
@@ -874,7 +895,7 @@ footer p {
 .research-project-toggle::after {
     transform: translate(-50%, -50%) rotate(90deg);
 }
-
+*/
 .research-project[open] .research-project-toggle {
     border-color: #315f55;
     background: #e3ece7;
@@ -889,7 +910,8 @@ footer p {
     grid-template-columns: minmax(0, 1.08fr) minmax(250px, 0.92fr);
     gap: clamp(30px, 5vw, 58px);
     align-items: start;
-    padding: 4px 0 45px 76px;
+    //padding: 4px 0 45px 76px;
+    padding: 4px 0 45px;
 }
 
 .research-project-copy p {
@@ -898,6 +920,9 @@ footer p {
     color: #53605c;
     font-size: 1.02rem;
     line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .research-project-figure {
