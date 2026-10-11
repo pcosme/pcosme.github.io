@@ -73,7 +73,7 @@
 }
 #research-map .pl-host { width: 100%; position: relative; }
 #research-map .pl-svg { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
-#research-map .pl-svg text { fill: var(--pl-ink); }
+#research-map .pl-svg text { fill: var(--pl-ink); font-family: Georgia, "Times New Roman", serif; }
 #research-map .pl-main-region {
   fill-opacity: .53;
   transition: fill-opacity 220ms ease, filter 220ms ease;
@@ -83,9 +83,16 @@
 #research-map .pl-main-region[data-emphasis="primary"] { fill-opacity: .88; filter: saturate(1.55); }
 #research-map .pl-main-region[data-keyboard="true"] { stroke: var(--pl-ink); stroke-width: 2; stroke-opacity: .85; }
 #research-map [data-topic],
-#research-map [data-connection] { opacity: 0; transition: opacity 220ms ease; }
+#research-map [data-connection] { opacity: 0; transition: opacity 220ms ease;
+    marker-start: none; /* Remove starting arrowheads */
+  marker-end: none;   /* Remove ending arrowheads */
+  stroke-width: 4px;  /* Currently 1.1px */
+}
 #research-map [data-topic][data-emphasis="primary"],
-#research-map [data-connection][data-shown="true"] { opacity: 1; }
+#research-map [data-connection][data-shown="true"] { opacity: 1;
+  marker-start: none; /* Remove starting arrowheads */
+  marker-end: none;   /* Remove ending arrowheads */
+  stroke-width: 4px;  /* Currently 1.1px */}
 #research-map [data-topic][data-emphasis="context"] { opacity: .83; }
 #research-map path[data-topic][data-emphasis="structure"] { opacity: .33; }
 #research-map text[data-topic][data-emphasis="structure"] { opacity: .65; }

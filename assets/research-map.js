@@ -178,6 +178,21 @@
     blob('soft',441,483,215,215,'soft','condensed-edge',.47,2);
     blob('active',454,501,190,132,'active','condensed-edge',.55,0);
     blob('microswimmers',narrow?465:475,520,narrow?176:157,52,'small','biophysics-edge',.82,1);
+blob('nonlinear',
+  narrow ? 259 : 276, 176,
+  narrow ? 174 : 140, 82,
+  'small', 'classical-edge', .65, 0);
+
+blob('symmetry',
+  narrow ? 148 : 163, narrow ? 339 : 323,
+  narrow ? 144 : 114, narrow ? 24 : 56,
+  'small', 'statistical-edge', .65, 1);
+
+blob('coarse-graining',
+  narrow ? 160 : 178, narrow ? 363 : 379,
+  narrow ? 126 : 90, narrow ? 24 : 48,
+  'small', 'statistical-edge', .65, 0);
+
 
     connection('kinetic-to-transport',[144,427,148,384,150,337,151,303],true);
     connection('hydro-to-waves',[272,256,294,257,303,243,318,238],true);
