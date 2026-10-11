@@ -163,11 +163,11 @@
       const spans = lines.map((line,i)=>`<tspan x="${x*sx}" y="${first+i*leading}">${esc(line)}</tspan>`).join('');
       labels.push(`<text data-topic="${id}" data-label="${id}" text-anchor="middle" font-family="${family}" font-size="${size}" font-weight="400" ${kind==='theme' ? 'font-style="italic"' : ''} fill="var(--pl-ink)">${spans}</text>`);
     }
-    function boundaryLabel(id,title,path,size=25) {
+    function boundaryLabel(id,title,path,size=38) {
       const pathId = `research-map-boundary-${id}`;
       areas[id].caption=curvePoints(coordinates(path));
       definitions.push(`<path id="${pathId}" d="${coordinates(path)}"/>`);
-      labels.push(`<text class="pl-domain-label" data-field="${id}" data-label="${id}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${narrow?18:size}" font-style="italic" font-weight="400" fill="var(--pl-ink)"><textPath href="#${pathId}" xlink:href="#${pathId}" startOffset="50%">${esc(title)}</textPath></text>`);
+      labels.push(`<text class="pl-domain-label" data-field="${id}" data-label="${id}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${narrow?20:size}" font-style="italic" font-weight="400" fill="var(--pl-ink)"><textPath href="#${pathId}" xlink:href="#${pathId}" startOffset="50%">${esc(title)}</textPath></text>`);
     }
     function connection(id,points,arrow=false,both=false) {
       const [x1,y1,cx1,cy1,cx2,cy2,x2,y2] = points;
@@ -182,19 +182,19 @@
     region('biophysics','M 526 395 C 614 380 682 430 690 526 C 712 622 661 725 576 739 C 509 745 446 698 435 628 C 422 539 437 443 526 395 Z','biophysics','biophysics-edge',.57);
 
     // This continuous translucent region physically intersects each of the five domains.
-    shapes.push(`<path data-topic="emergence" data-region="emergence" d="${coordinates('M 214 355 C 220 321 278 319 318 335 C 335 308 376 307 405 329 C 442 311 500 329 518 361 C 554 375 560 412 535 431 C 548 473 492 490 452 470 C 409 496 372 478 340 473 C 303 482 276 455 249 431 C 206 420 183 382 214 355 Z')}" fill="var(--pl-emergence)" fill-opacity=".74"/>`);
+    //shapes.push(`<path data-topic="emergence" data-region="emergence" d="${coordinates('M 214 355 C 220 321 278 319 318 335 C 335 308 376 307 405 329 C 442 311 500 329 518 361 C 554 375 560 412 535 431 C 548 473 492 490 452 470 C 409 496 372 478 340 473 C 303 482 276 455 249 431 C 206 420 183 382 214 355 Z')}" fill="var(--pl-emergence)" fill-opacity=".74"/>`);
 
-    blob('transport',55,123,244,181,'transport','classical-edge',.43,2);
-    blob('hydro',83,229,193,59,'hydro','classical-edge',.86,0);
-    blob('lowdim',444,112,175,81,'dynamical','dynamical-edge',.55,1);
-    blob('bifurcations',428,210,208,89,'dynamical','dynamical-edge',.58,0);
-    blob('oscillators',425,316,228,112,'dynamical','dynamical-edge',.68,2);
+    blob('transport',55,123,244,181,'small','classical-edge',.43,2);
+    blob('hydro',83,229,193,59,'small','classical-edge',.86,0);
+    blob('lowdim',444,112,175,81,'small','dynamical-edge',.55,1);
+    blob('bifurcations',428,210,208,89,'small','dynamical-edge',.58,0);
+    blob('oscillators',425,316,228,112,'small','dynamical-edge',.68,2);
     blob('synchronisation',narrow?440:451,371,narrow?201:176,47,'small','dynamical-edge',.78,0);
-    blob('kinetic',66,424,166,91,'kinetic','statistical-edge',.54,1);
-    blob('phase-and-order',263,451,197,89,'kinetic','statistical-edge',.39,0);
-    blob('nonequilibrium',246,554,208,86,'kinetic','statistical-edge',.39,2);
+    blob('kinetic',66,424,166,91,'small','statistical-edge',.54,1);
+    blob('phase-and-order',263,451,197,89,'small','statistical-edge',.39,0);
+    blob('nonequilibrium',246,554,208,86,'small','statistical-edge',.39,2);
     blob('plasma',narrow?215:230,657,narrow?221:193,135,'small','condensed-edge',.71,2);
-    blob('electron-hydro',narrow?228:247,715,narrow?200:161,60,'hydro','classical-edge',.84,0);
+    blob('electron-hydro',narrow?228:247,715,narrow?200:161,60,'small','Create new scratch file from selection-edge',.84,0);
     blob('soft',441,483,215,215,'soft','condensed-edge',.47,2);
     blob('active',454,501,190,132,'active','condensed-edge',.55,0);
     blob('microswimmers',narrow?465:475,520,narrow?176:157,52,'small','biophysics-edge',.82,1);
@@ -221,7 +221,7 @@ blob('coarse-graining',
     connection('synchronisation-collective-order',[479,414,470,430,459,449,448,469]);
     connection('collective-order-microswimmers',[454,502,472,505,483,519,491,531]);
     connection('nonequilibrium-active',[449,596,453,596,457,596,461,596]);
-    connection('emergence-coarse-graining',narrow?[242,383,271,390,289,400,304,409]:[253,407,260,408,267,409,274,410]);
+    //connection('emergence-coarse-graining',narrow?[242,383,271,390,289,400,304,409]:[253,407,260,408,267,409,274,410]);
 
     boundaryLabel('classical','Classical field theory','M 39 146 C 69 58 220 21 340 70');
     boundaryLabel('dynamical','Dynamical systems','M 362 79 C 445 42 561 59 631 119');
@@ -237,7 +237,7 @@ blob('coarse-graining',
     label('nonlinear',346,217,['Nonlinear','waves'],18);
     label('symmetry',220,351,['Symmetry','breaking'],14,'small');
     label('coarse-graining',223,narrow?375:403,['Coarse-','graining'],12,'small');
-    label('emergence',360,narrow?421:410,['Emergence'],30,'theme');
+    //label('emergence',360,narrow?421:410,['Emergence'],30,'theme');
     label('kinetic',150,470,['Kinetic','theory'],19);
     label('phase-and-order',362,496,['Phase transitions','& collective order'],16,'topic',['Phase','transitions','& collective','order']);
     label('nonequilibrium',351,598,['Non-equilibrium','statistical physics'],16,'topic',['Non-equilibrium','statistical','physics']);

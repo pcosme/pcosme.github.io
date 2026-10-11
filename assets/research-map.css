@@ -49,6 +49,29 @@
   --pl-paper: #fbfaf7;
   --pl-ink: #3f4543;
   --pl-muted: #67726b;
+  --pl-classical: #2f4593;
+  --pl-classical-edge: #22367e;
+  --pl-dynamical: #4c1e28;
+  --pl-dynamical-edge: #431821;
+  --pl-statistical: #ffa601;
+  --pl-statistical-edge: #da8f05;
+  --pl-condensed: #d1ab9f;
+  --pl-condensed-edge: #b89084;
+  --pl-biophysics: #678042;
+  --pl-biophysics-edge: #4b602b;
+  /*--*/
+  --pl-transport: #c7b7e1;
+  --pl-hydro: #eee8f6;
+  --pl-kinetic: #a9cddc;
+  --pl-soft: #d1ab9f;
+  --pl-active: #d1ab9f;
+  /*--*/
+  --pl-small: #faf6e9;
+  --pl-emergence: #f3dfaa;
+  /*
+  --pl-paper: #fbfaf7;
+  --pl-ink: #3f4543;
+  --pl-muted: #67726b;
   --pl-classical: #dbcff0;
   --pl-classical-edge: #b2a2ca;
   --pl-dynamical: #f3d6c2;
@@ -65,7 +88,7 @@
   --pl-soft: #b9d2b2;
   --pl-active: #a1c29a;
   --pl-small: #faf6e9;
-  --pl-emergence: #f3dfaa;
+  --pl-emergence: #f3dfaa;*/
   color: var(--pl-ink);
   background: var(--pl-paper);
   border-radius: 0;
