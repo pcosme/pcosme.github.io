@@ -16,7 +16,7 @@
     dynamical: {name:'Dynamical systems',core:[532,220],topics:['lowdim','bifurcations','oscillators','synchronisation','nonlinear']},
     statistical: {name:'Statistical physics',core:[176,511],topics:['kinetic','nonequilibrium','phase-and-order','symmetry','coarse-graining']},
     condensed: {name:'Condensed matter',core:[347,730],topics:['plasma','electron-hydro','soft','active','microswimmers']},
-    biophysics: {name:'Biophysics',core:[594,591],topics:['active','microswimmers']}
+    biophysics: {name:'Biophysics',core:[465,430],topics:['microswimmers']}
   };
   const parents = {'hydro':'transport','synchronisation':'oscillators','electron-hydro':'plasma','active':'soft','microswimmers':'active'};
   const links = {
@@ -179,7 +179,8 @@
     region('dynamical','M 355 63 C 437 18 565 38 634 99 C 693 157 692 292 665 352 C 635 420 546 455 444 427 C 370 406 324 347 306 271 C 287 190 292 112 355 63 Z','dynamical','dynamical-edge',.64);
     region('statistical','M 78 313 C 156 277 259 283 344 331 C 430 376 490 413 489 492 C 495 582 432 662 326 701 C 244 758 98 720 45 637 C 1 566 12 368 78 313 Z','statistical','statistical-edge',.68);
     region('condensed','M 298 453 C 388 416 522 431 610 493 C 675 546 699 670 651 761 C 590 842 397 856 280 809 C 210 781 183 690 199 594 C 214 519 242 477 298 453 Z','condensed','condensed-edge',.69);
-    region('biophysics','M 526 395 C 614 380 682 430 690 526 C 712 622 661 725 576 739 C 509 745 446 698 435 628 C 422 539 437 443 526 395 Z','biophysics','biophysics-edge',.57);
+    // Biophysics contains microswimmers and overlaps only part of active/soft matter.
+    region('biophysics','M 371 299 C 431 264 483 286 518 342 C 552 395 603 435 642 495 C 678 551 646 584 582 590 C 517 597 459 575 430 526 C 400 477 355 443 340 389 C 329 353 336 319 371 299 Z','biophysics','biophysics-edge',.57);
 
     // This continuous translucent region physically intersects each of the five domains.
     //shapes.push(`<path data-topic="emergence" data-region="emergence" d="${coordinates('M 214 355 C 220 321 278 319 318 335 C 335 308 376 307 405 329 C 442 311 500 329 518 361 C 554 375 560 412 535 431 C 548 473 492 490 452 470 C 409 496 372 478 340 473 C 303 482 276 455 249 431 C 206 420 183 382 214 355 Z')}" fill="var(--pl-emergence)" fill-opacity=".74"/>`);
@@ -227,7 +228,7 @@ blob('coarse-graining',
     boundaryLabel('dynamical','Dynamical systems','M 362 79 C 445 42 561 59 631 119');
     boundaryLabel('statistical','Statistical physics',narrow?'M 82 623 C 52 556 50 438 86 356':'M 56 623 C 26 556 24 438 60 356');
     boundaryLabel('condensed','Condensed matter','M 263 761 C 355 835 541 834 636 755');
-    boundaryLabel('biophysics','Biophysics','M 494 692 C 552 748 645 707 674 634');
+    boundaryLabel('biophysics','Biophysics','M 394 450 C 330 355 370 288 473 327');
     label('transport',177,174,['Transport equations'],18,'topic',['Transport','equations']);
     label('hydro',180,260,['Hydrodynamics'],17);
     label('lowdim',530,153,['Low-dimensional','models'],15,'topic',['Low-','dimensional','models']);
