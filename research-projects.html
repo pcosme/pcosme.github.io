@@ -3,51 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Cosme Research Projects</title>
+    <meta name="description" content="Research projects by Pedro Cosme across odd fluids, active matter, synchronisation, angular-momentum transport, and electron hydrodynamics.">
+    <title>Research | Pedro Cosme</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="research-page">
     <div class="container">
-        <div class="sidebar">
+        <aside class="sidebar">
             <div class="profile-picture">
                 <img src="profile.jpg" alt="Pedro Cosme">
             </div>
-            <nav class="navigation">
+            <nav class="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="research-projects.html">Research</a></li>
+                    <li><a class="active" href="research-projects.html">Research</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="publications.html">Publications</a></li>
                 </ul>
             </nav>
-        </div>
-        <div class="main-content">
-        <h1>Under construction</h1>
-        <img src="icons/seo-and-web-outline-15-10-512.webp" alt="underconst">
-        <!--
-            <section id="research-projects">
-                <h1>Research Projects</h1>
-                <p>Below is a list of research projects that Pedro Cosme has been involved in. This section will be updated with detailed descriptions and outcomes of each project.</p>
+        </aside>
 
-                <h2>Project Title 1</h2>
-                <p><strong>Duration:</strong> Start Date - End Date</p>
-                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+        <main class="main-content">
+            <header class="research-intro">
+                <p class="section-label">Current and recent work</p>
+                <h1>Research projects</h1>
+                <p class="intro-lead">
+                    Five connected lines of research spanning chiral fluids,
+                    collective dynamics, active matter, and electronic transport.
+                </p>
+                <p class="research-intro-note">Select a project to read more.</p>
+            </header>
 
-                <h2>Project Title 2</h2>
-                <p><strong>Duration:</strong> Start Date - End Date</p>
-                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+            <section class="research-project-list" aria-label="Research projects">
+                <details class="research-project" name="research-projects">
+                    <summary>
+                        <span class="research-project-number" aria-hidden="true">01</span>
+                        <span class="research-project-title">Capillary waves and droplets in odd fluids</span>
+                        <span class="research-project-toggle" aria-hidden="true"></span>
+                    </summary>
+                    <div class="research-project-body">
+                        <div class="research-project-copy">
+                            <p>
+                                Odd viscosity changes how a fluid transmits stress without adding
+                                dissipation, giving free surfaces a handed response. I study this
+                                physics in two complementary settings: capillary waves on extended
+                                interfaces and the oscillations of finite droplets. Theory and
+                                numerical simulations reveal how chirality separates
+                                counter-propagating modes, redistributes angular momentum, and
+                                alters nonlinear wave interactions.
+                            </p>
+                        </div>
+                        <figure class="research-project-figure">
+                            <!-- Replace this file later while keeping the same path. -->
+                            <img src="assets/research/capillary-phenomena.svg" width="720" height="440" loading="lazy" alt="Abstract illustration of a droplet and capillary waves">
+                            <figcaption>Capillary waves and droplet oscillations</figcaption>
+                        </figure>
+                    </div>
+                </details>
 
-                <h2>Project Title 3</h2>
-                <p><strong>Duration:</strong> Start Date - End Date</p>
-                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                <details class="research-project" name="research-projects">
+                    <summary>
+                        <span class="research-project-number" aria-hidden="true">02</span>
+                        <span class="research-project-title">Synchronisation and phase transitions in rotary microswimmers</span>
+                        <span class="research-project-toggle" aria-hidden="true"></span>
+                    </summary>
+                    <div class="research-project-body">
+                        <div class="research-project-copy">
+                            <p>
+                                Rotary microswimmers turn internal cyclic motion into interactions
+                                with their neighbours. Inspired by the flagellar dynamics of
+                                <em>Chlamydomonas</em>, this project explores when many such
+                                oscillators synchronise and how collective polar, nematic, or
+                                chiral phases emerge. Generalised XY and Kuramoto-type models
+                                connect microscopic couplings to phase transitions, defects, and
+                                large-scale order.
+                            </p>
+                        </div>
+                        <figure class="research-project-figure">
+                            <!-- Replace this file later while keeping the same path. -->
+                            <img src="assets/research/microswimmer-synchronisation.svg" width="720" height="440" loading="lazy" alt="Abstract illustration of synchronising rotary microswimmers">
+                            <figcaption>Coupled phases and collective order</figcaption>
+                        </figure>
+                    </div>
+                </details>
 
-                <!-- Add more projects as needed 
+                <details class="research-project" name="research-projects">
+                    <summary>
+                        <span class="research-project-number" aria-hidden="true">03</span>
+                        <span class="research-project-title">Angular-momentum transport in odd fluids</span>
+                        <span class="research-project-toggle" aria-hidden="true"></span>
+                    </summary>
+                    <div class="research-project-body">
+                        <div class="research-project-copy">
+                            <p>
+                                Chiral fluids possess internal rotational degrees of freedom, so
+                                angular momentum can move between microscopic spin, orbital flow,
+                                and the surrounding medium. I develop continuum and kinetic
+                                descriptions of this exchange, including micropolar stresses,
+                                couple stresses, and physically consistent boundary conditions.
+                                The aim is to identify observable signatures in confined flows,
+                                interfaces, and waves.
+                            </p>
+                        </div>
+                        <figure class="research-project-figure">
+                            <!-- Replace this file later while keeping the same path. -->
+                            <img src="assets/research/angular-momentum.svg" width="720" height="440" loading="lazy" alt="Abstract illustration of spin and angular-momentum transport">
+                            <figcaption>Exchange between spin, flow, and stress</figcaption>
+                        </figure>
+                    </div>
+                </details>
+
+                <details class="research-project" name="research-projects">
+                    <summary>
+                        <span class="research-project-number" aria-hidden="true">04</span>
+                        <span class="research-project-title">Chemorheology of active droplets</span>
+                        <span class="research-project-toggle" aria-hidden="true"></span>
+                    </summary>
+                    <div class="research-project-body">
+                        <div class="research-project-copy">
+                            <p>
+                                Active droplets combine internally generated stresses with
+                                chemical reactions that may themselves oscillate. This project
+                                studies the feedback loop between chemical state, active stress,
+                                flow, and droplet shape: how chemical rhythms reshape the effective
+                                rheology and how mechanics, in turn, reorganises those rhythms.
+                                Reduced models and simulations expose the onset of oscillatory,
+                                symmetry-breaking, and self-organised states.
+                            </p>
+                        </div>
+                        <figure class="research-project-figure">
+                            <!-- Replace this file later while keeping the same path. -->
+                            <img src="assets/research/active-droplet-chemorheology.svg" width="720" height="440" loading="lazy" alt="Abstract illustration of chemical oscillations inside an active droplet">
+                            <figcaption>Chemical rhythms coupled to active stress</figcaption>
+                        </figure>
+                    </div>
+                </details>
+
+                <details class="research-project" name="research-projects">
+                    <summary>
+                        <span class="research-project-number" aria-hidden="true">05</span>
+                        <span class="research-project-title">Topological interfacial modes in electron hydrodynamics</span>
+                        <span class="research-project-toggle" aria-hidden="true"></span>
+                    </summary>
+                    <div class="research-project-body">
+                        <div class="research-project-copy">
+                            <p>
+                                Interfaces between electron fluids can guide collective modes whose
+                                propagation depends on broken symmetries, material contrasts, and
+                                boundary conditions. This project asks when those modes become
+                                localised and directional, and how robust they remain in the
+                                presence of dissipation and imperfections. It builds a bridge
+                                between electronic hydrodynamics, plasmonics, and topological wave
+                                physics.
+                            </p>
+                        </div>
+                        <figure class="research-project-figure">
+                            <!-- Replace this file later while keeping the same path. -->
+                            <img src="assets/research/topological-interface.svg" width="720" height="440" loading="lazy" alt="Abstract illustration of a directional mode localised at an interface">
+                            <figcaption>Directional modes localised at an interface</figcaption>
+                        </figure>
+                    </div>
+                </details>
             </section>
-        //-->    
-        </div>
+        </main>
     </div>
-</body>
-       <footer>
-        <p>Last updated: July 23, 2024</p>
+
+    <footer>
+        <p>Last updated: October 11, 2026</p>
     </footer>
+</body>
 </html>

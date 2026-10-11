@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Capillary waves and an odd-fluid droplet</title>
+  <desc id="desc">A circular droplet above a rippling interface, with an asymmetric curved arrow indicating chirality.</desc>
+  <rect width="720" height="440" fill="#f2f0e9"/>
+  <path d="M0 300 C70 258 123 344 194 300 S319 258 390 300 514 342 586 300 662 270 720 299 V440 H0Z" fill="#dce9e4"/>
+  <path d="M0 300 C70 258 123 344 194 300 S319 258 390 300 514 342 586 300 662 270 720 299" fill="none" stroke="#315f55" stroke-width="4"/>
+  <circle cx="360" cy="172" r="93" fill="#fbfaf7" stroke="#92543d" stroke-width="4"/>
+  <path d="M302 180 C325 112 411 102 431 171 C450 236 365 267 320 222" fill="none" stroke="#315f55" stroke-width="6" stroke-linecap="round"/>
+  <path d="M306 180 l-18 -8 7 20" fill="none" stroke="#315f55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M225 322 C266 340 298 340 338 322" fill="none" stroke="#92543d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M382 322 C423 340 455 340 495 322" fill="none" stroke="#92543d" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="98" cy="86" r="7" fill="#92543d" opacity=".55"/>
+  <circle cx="623" cy="103" r="11" fill="#315f55" opacity=".22"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Angular-momentum transport</title>
+  <desc id="desc">Microscopic rotors exchange angular momentum with a larger circulating flow.</desc>
+  <rect width="720" height="440" fill="#f2f0e9"/>
+  <circle cx="360" cy="220" r="142" fill="#e3ece7" stroke="#315f55" stroke-width="3"/>
+  <circle cx="360" cy="220" r="81" fill="#fbfaf7" stroke="#cbd1ce" stroke-width="3"/>
+  <g fill="none" stroke="#92543d" stroke-width="6" stroke-linecap="round">
+    <path d="M257 148 A126 126 0 0 1 462 149"/>
+    <path d="M452 306 A126 126 0 0 1 256 292"/>
+  </g>
+  <g fill="#92543d">
+    <path d="M462 149 l-21 -3 12 18z"/><path d="M256 292 l21 2 -13 -17z"/>
+  </g>
+  <g fill="#fbfaf7" stroke="#315f55" stroke-width="3">
+    <circle cx="330" cy="198" r="21"/><circle cx="391" cy="185" r="21"/><circle cx="379" cy="246" r="21"/><circle cx="318" cy="251" r="21"/>
+  </g>
+  <g fill="none" stroke="#315f55" stroke-width="3" stroke-linecap="round">
+    <path d="M318 198 A13 13 0 0 1 336 187"/><path d="M379 185 A13 13 0 0 1 397 174"/>
+    <path d="M367 246 A13 13 0 0 1 385 235"/><path d="M306 251 A13 13 0 0 1 324 240"/>
+  </g>
+  <path d="M120 220 H205 M515 220 H600" stroke="#315f55" stroke-width="4" stroke-linecap="round"/>
+  <path d="M194 211 l14 9 -14 9 M526 211 l-14 9 14 9" fill="none" stroke="#315f55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Chemorheology of an active droplet</title>
+  <desc id="desc">A deformable droplet contains oscillating chemical fields and an internal circulating flow.</desc>
+  <rect width="720" height="440" fill="#f2f0e9"/>
+  <path d="M359 72 C453 72 522 137 513 224 C504 313 448 367 353 365 C257 363 194 313 202 220 C210 127 264 72 359 72Z" fill="#e3ece7" stroke="#315f55" stroke-width="4"/>
+  <g fill="none" stroke="#92543d" stroke-width="5" opacity=".9">
+    <path d="M260 219 C280 151 362 130 419 166 C477 203 449 283 395 308 C337 335 264 289 260 219Z"/>
+    <path d="M294 219 C309 176 360 164 398 187 C436 211 418 263 383 278 C345 296 298 267 294 219Z"/>
+  </g>
+  <g fill="#92543d">
+    <circle cx="313" cy="167" r="11" opacity=".7"/><circle cx="438" cy="226" r="14" opacity=".45"/>
+    <circle cx="335" cy="299" r="9" opacity=".65"/><circle cx="383" cy="217" r="12" opacity=".82"/>
+  </g>
+  <path d="M278 247 C305 279 360 288 400 261 C428 242 438 208 426 179" fill="none" stroke="#315f55" stroke-width="5" stroke-linecap="round"/>
+  <path d="M426 179 l-2 19 -16 -11" fill="none" stroke="#315f55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M132 220 C158 194 174 194 201 220 M514 220 C541 246 558 246 585 220" fill="none" stroke="#c1aba2" stroke-width="4" stroke-linecap="round"/>
+</svg>

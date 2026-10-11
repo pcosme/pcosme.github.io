@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Topological mode at an electron-fluid interface</title>
+  <desc id="desc">Two media meet at an interface carrying a directional, spatially localised wave.</desc>
+  <rect width="720" height="220" fill="#e3ece7"/>
+  <rect y="220" width="720" height="220" fill="#eee7df"/>
+  <path d="M0 220 H720" stroke="#315f55" stroke-width="4"/>
+  <g fill="none" stroke="#9caaa5" stroke-width="2" opacity=".7">
+    <path d="M84 162 C120 129 156 129 192 162 S264 195 300 162 372 129 408 162 480 195 516 162 588 129 624 162"/>
+    <path d="M84 278 C120 311 156 311 192 278 S264 245 300 278 372 311 408 278 480 245 516 278 588 311 624 278"/>
+  </g>
+  <path d="M86 220 C120 188 154 188 188 220 S256 252 290 220 358 188 392 220 460 252 494 220 562 188 596 220" fill="none" stroke="#92543d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M596 220 l-24 -14 2 27z" fill="#92543d"/>
+  <g stroke="#315f55" stroke-width="3" opacity=".65">
+    <path d="M126 106 V165"/><path d="M232 93 V159"/><path d="M338 111 V172"/><path d="M444 91 V158"/><path d="M550 108 V167"/>
+    <path d="M126 334 V275"/><path d="M232 347 V281"/><path d="M338 329 V268"/><path d="M444 349 V282"/><path d="M550 332 V273"/>
+  </g>
+</svg>
