@@ -9,6 +9,8 @@
   const svg = root.querySelector('.pl-svg');
   const actions = root.querySelector('.pl-actions');
   const status = root.querySelector('.pl-status');
+  const showAll = root.querySelector('[data-map-action="show-all"]');
+  const clearAll = root.querySelector('[data-map-action="clear-all"]');
   const fields = {
     classical: {name:'Classical field theory',core:[177,174],topics:['transport','hydro','nonlinear','symmetry']},
     dynamical: {name:'Dynamical systems',core:[532,220],topics:['lowdim','bifurcations','oscillators','synchronisation','nonlinear']},
@@ -27,10 +29,13 @@
     'nonequilibrium-active':['nonequilibrium','active'],
     'emergence-coarse-graining':['emergence','coarse-graining']
   };
-  let active = null, pinned = null, keyboard = false, exitTimer;
+  const pinned = new Set();
+  let active = null, focused = null, keyboard = false, exitTimer;
   let geometry = {}, topicElements = [], domainElements = [], connectionElements = [];
-  function explore(field) {
-    const primary = new Set(field ? [...fields[field].topics,'emergence'] : []);
+  function explore(selected) {
+    const primary = new Set();
+    for(const field of selected) for(const topic of fields[field].topics) primary.add(topic);
+    if(selected.size) primary.add('emergence');
     const context = new Set();
     for(const [a,b] of Object.values(links)) {
       if(primary.has(a) && !primary.has(b)) context.add(b);
@@ -49,8 +54,10 @@
   }
   function setField(field) {
     active = field;
-    const state = explore(field);
-    svg.dataset.exploring = String(Boolean(field));
+    const selected = new Set(pinned);
+    if(field) selected.add(field);
+    const state = explore(selected);
+    svg.dataset.exploring = String(selected.size > 0);
     for(const element of topicElements) {
       const id = element.dataset.topic;
       const emphasis = state.primary.has(id)?'primary':state.context.has(id)?'context':state.structure.has(id)?'structure':'hidden';
@@ -59,8 +66,8 @@
     }
     for(const element of domainElements) {
       const id = element.dataset.field;
-      element.dataset.emphasis = id===field?'primary':fields[id].topics.some(topic=>state.context.has(topic))?'context':'background';
-      element.dataset.keyboard = String(keyboard && id===field);
+      element.dataset.emphasis = selected.has(id)?'primary':fields[id].topics.some(topic=>state.context.has(topic))?'context':'background';
+      element.dataset.keyboard = String(keyboard && id===focused);
     }
     for(const element of connectionElements) {
       const [a,b] = links[element.dataset.connection];
@@ -68,8 +75,21 @@
       element.dataset.shown = String(shown);
       element.setAttribute('aria-hidden',String(!shown));
     }
-    for(const button of actions.querySelectorAll('button')) button.setAttribute('aria-pressed',String(button.dataset.field===field));
-    status.textContent = field ? fields[field].name + (pinned?' · pinned':'') : 'All fields';
+    for(const button of actions.querySelectorAll('button')) button.setAttribute('aria-pressed',String(pinned.has(button.dataset.field)));
+    if(showAll) showAll.disabled = pinned.size === Object.keys(fields).length;
+    if(clearAll) clearAll.disabled = pinned.size === 0;
+    if(pinned.size === Object.keys(fields).length) status.textContent = 'All fields pinned';
+    else if(pinned.size) {
+      const summary = pinned.size === 1 ? fields[[...pinned][0]].name + ' · pinned' : `${pinned.size} fields pinned`;
+      status.textContent = summary + (field && !pinned.has(field) ? ` · Preview: ${fields[field].name}` : '');
+    } else status.textContent = field ? fields[field].name : 'Overview';
+  }
+  function clearPins() {
+    clearTimeout(exitTimer);
+    pinned.clear();
+    keyboard = false;
+    focused = null;
+    setField(null);
   }
   function curvePoints(path) {
     const tokens = path.match(/[MCZ]|[-+]?(?:\d*\.\d+|\d+)/g);
@@ -251,13 +271,18 @@ blob('coarse-graining',
         const button=document.createElement('button');
         button.type='button';button.className='pl-area-trigger';button.dataset.field=id;
         button.setAttribute('aria-label',field.name);button.setAttribute('aria-pressed','false');
-        button.addEventListener('focus',()=>{keyboard=button.matches(':focus-visible');if(keyboard){pinned=null;setField(id);}});
+        button.addEventListener('focus',()=>{
+          keyboard=button.matches(':focus-visible');
+          focused=keyboard?id:null;
+          if(keyboard) {clearTimeout(exitTimer);setField(id);}
+        });
         button.addEventListener('click',event=>{
           clearTimeout(exitTimer);
           const box=host.getBoundingClientRect();
-          const target=event.detail===0?id:(pickField({x:event.clientX-box.left,y:event.clientY-box.top},false)||id);
-          pinned=pinned===target?null:target;
-          setField(pinned);
+          const target=event.detail===0?id:(pickField({x:event.clientX-box.left,y:event.clientY-box.top})||id);
+          if(pinned.has(target)) pinned.delete(target);
+          else pinned.add(target);
+          setField(null);
         });
         actions.append(button);
       }
@@ -266,32 +291,37 @@ blob('coarse-graining',
     setField(active);
   }
   host.addEventListener('pointermove',event=>{
-    if(event.pointerType==='touch' || pinned) return;
+    if(event.pointerType==='touch') return;
+    const wasKeyboard=keyboard;
     keyboard=false;
+    focused=null;
     clearTimeout(exitTimer);
     const box=host.getBoundingClientRect();
     const field=pickField({x:event.clientX-box.left,y:event.clientY-box.top});
-    if(field) {if(field!==active)setField(field);}
+    if(field) {if(field!==active || wasKeyboard)setField(field);}
     else exitTimer=setTimeout(()=>setField(null),160);
   });
   host.addEventListener('pointerleave',()=>{
     clearTimeout(exitTimer);
-    if(!pinned && !keyboard) exitTimer=setTimeout(()=>setField(null),180);
+    if(!keyboard) exitTimer=setTimeout(()=>setField(null),180);
   });
   root.addEventListener('keydown',event=>{
-    if(event.key==='Escape') {clearTimeout(exitTimer);pinned=null;keyboard=false;setField(null);}
+    if(event.key==='Escape') clearPins();
   });
   root.addEventListener('focusout',event=>{
-    if(!root.contains(event.relatedTarget)) {keyboard=false;if(!pinned)setField(null);}
+    if(!actions.contains(event.relatedTarget)) {keyboard=false;focused=null;setField(null);}
   });
+  if(showAll) showAll.addEventListener('click',()=>{
+    clearTimeout(exitTimer);
+    for(const field of Object.keys(fields)) pinned.add(field);
+    keyboard=false;
+    focused=null;
+    setField(null);
+  });
+  if(clearAll) clearAll.addEventListener('click',clearPins);
   if (disclosure) disclosure.addEventListener('toggle', () => {
     if (disclosure.open) render();
-    else {
-      clearTimeout(exitTimer);
-      pinned = null;
-      keyboard = false;
-      setField(null);
-    }
+    else clearPins();
   });
   new ResizeObserver(render).observe(host);
   render();

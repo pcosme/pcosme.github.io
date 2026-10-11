@@ -72,6 +72,24 @@
   padding: 0;
 }
 #research-map .pl-host { width: 100%; position: relative; }
+#research-map .pl-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+#research-map .pl-control {
+  min-height: 44px;
+  padding: 8px 15px;
+  border: 1px solid #cbd1ce;
+  border-radius: 4px;
+  background: transparent;
+  color: #315f55;
+  font: 400 .82rem/1.5 Arial, sans-serif;
+  cursor: pointer;
+}
+#research-map .pl-control:hover:not(:disabled) { background: #e3ece7; }
+#research-map .pl-control:disabled { opacity: .5; cursor: default; }
 #research-map .pl-svg { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
 #research-map .pl-svg text { fill: var(--pl-ink); font-family: Georgia, "Times New Roman", serif; }
 #research-map .pl-main-region {
@@ -128,6 +146,7 @@
 /* Let the diagram use the screen width while the disclosure stays text-aligned. */
 @media (max-width: 480px) {
   .research-interests-panel { margin-inline: -24px; }
+  #research-map .pl-controls { margin-inline: 24px; }
   .research-map-help,
   .research-map-fallback { margin-inline: 24px; }
 }

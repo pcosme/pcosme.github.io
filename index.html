@@ -64,15 +64,19 @@
                 <summary><span id="research-interests-title">Research interests</span></summary>
                 <div class="research-interests-panel">
                     <p class="research-map-help" id="research-map-help" hidden>
-                        Hover to explore. Click or tap an area to keep it open; select it again to release it.
+                        Hover to explore. Click or tap fields to pin them together; select a field again to unpin it.
                     </p>
                     <div id="research-map" aria-labelledby="research-interests-title" hidden>
                         <div class="pl-paper">
+                            <div class="pl-controls" role="group" aria-label="Map visibility">
+                                <button class="pl-control" type="button" data-map-action="show-all" aria-controls="research-map-diagram">Show all</button>
+                                <button class="pl-control" type="button" data-map-action="clear-all" aria-controls="research-map-diagram" disabled>Clear all</button>
+                            </div>
                             <div class="pl-host">
-                                <svg class="pl-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="research-map-title research-map-description"></svg>
+                                <svg id="research-map-diagram" class="pl-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="research-map-title research-map-description"></svg>
                                 <div class="pl-actions" role="group" aria-label="Explore research fields" aria-describedby="research-map-help"></div>
                             </div>
-                            <p class="pl-status" aria-live="polite" aria-atomic="true">All fields</p>
+                            <p class="pl-status" aria-live="polite" aria-atomic="true">Overview</p>
                         </div>
                     </div>
                     <noscript>
@@ -101,7 +105,7 @@
     </div>
 
     <footer>
-        <p>Last updated: October 5, 2026</p>
+        <p>Last updated: October 11, 2026</p>
     </footer>
 </body>
 </html>
