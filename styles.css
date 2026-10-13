@@ -938,6 +938,14 @@ footer p {
     background: #f2f0e9;
 }
 
+.research-project-figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #d4dad6;
+    background: #f2f0e9;
+}
+
 .research-project-figure figcaption {
     margin-top: 10px;
     color: #587069;
