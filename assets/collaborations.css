@@ -1,0 +1,141 @@
+/* Collaborations across spacetime: homepage disclosure and interactive map. */
+.collaborations {
+  margin: 0;
+  border-bottom: 1px solid #cbd1ce;
+}
+.collaborations > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 27px 0;
+  color: #26302d;
+  font-family: "Bodoni Moda", "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: normal;
+  list-style: none;
+  cursor: pointer;
+}
+.collaborations > summary::-webkit-details-marker { display: none; }
+.collaborations > summary::marker { content: ""; }
+.collaborations > summary::after {
+  content: "+";
+  color: #315f55;
+  font: 400 1.5rem/1 Arial, sans-serif;
+}
+.collaborations[open] > summary::after { content: "−"; }
+.collaborations > summary:hover { color: #315f55; }
+.collaborations > summary:focus-visible { outline: 2px solid #315f55; outline-offset: 4px; }
+.collaborations-panel { padding-bottom: 30px; }
+.collaborations-note {
+  max-width: 700px;
+  margin: 0 0 16px;
+  color: #53605c;
+  font: 400 .8rem/1.6 Arial, sans-serif;
+}
+.collaborations-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  border-radius: 14px;
+  background: #0c1e2c;
+}
+.collaborations-stage {
+  position: relative;
+  width: 100%;
+  background: radial-gradient(ellipse at 56% 42%, #173345 0%, #0d2333 55%, #091a29 100%);
+  isolation: isolate;
+}
+.collaborations-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+.collab-sphere { fill: #0c2435; stroke: #406073; stroke-width: 1; }
+.collab-land { fill: #2b4b5d; stroke: #5b7786; stroke-width: .6; }
+.collab-borders { fill: none; stroke: #688593; stroke-width: .48; opacity: .48; }
+.collab-graticule { fill: none; stroke: #7791a1; stroke-width: .55; opacity: .24; }
+.collab-inset-bg { fill: #102b3e; stroke: #86a8b4; stroke-width: 1.4; }
+.collab-inset-graticule { fill: none; stroke: #69899c; opacity: .25; stroke-width: .5; }
+.collab-inset-land { fill: #365769; stroke: #7394a4; stroke-width: .65; }
+.collab-inset-borders { fill: none; stroke: #99b2bc; stroke-width: .55; opacity: .6; }
+.collab-leader { stroke: #c7e9e8; stroke-width: 1.45; opacity: .6; fill: none; }
+.collab-anchor { fill: #e4f7f3; opacity: .85; }
+.collab-marker { cursor: pointer; outline: none; }
+.collab-visible {
+  fill: #72dfd2;
+  fill-opacity: .96;
+  stroke: #d6fff5;
+  stroke-width: 1.8;
+  transition: fill 150ms ease, stroke-width 150ms ease, filter 150ms ease;
+}
+.collab-marker:hover .collab-visible,
+.collab-marker:focus-visible .collab-visible,
+.collab-marker.is-active .collab-visible {
+  fill: #9cf8e6;
+  stroke-width: 3.2;
+  filter: drop-shadow(0 0 8px rgba(114, 223, 210, .75));
+}
+.collab-hit { fill: transparent; stroke: transparent; pointer-events: all; }
+.collab-tooltip {
+  position: absolute;
+  z-index: 5;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(290px, calc(100% - 24px));
+  padding: 17px 18px 16px;
+  border: 1px solid rgba(157, 211, 211, .35);
+  border-radius: 11px;
+  background: rgba(9, 29, 44, .97);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .36);
+  color: #ecf7f4;
+  font: 400 13px/1.5 Arial, sans-serif;
+  pointer-events: none;
+}
+.collab-tooltip[hidden] { display: none; }
+.collab-tooltip h3 {
+  margin: 0 0 2px;
+  color: #f1faf8;
+  font: 600 18px/1.3 Arial, sans-serif;
+}
+.collab-tooltip .collab-count {
+  margin: 0 0 10px;
+  color: #80e6d6;
+  font-weight: 600;
+}
+.collab-tooltip ul {
+  margin: 0;
+  padding: 10px 0 0;
+  border-top: 1px solid rgba(185, 219, 216, .2);
+  list-style: none;
+}
+.collab-tooltip li + li { margin-top: 6px; }
+.collab-tooltip small { display: block; color: #a9c6c7; font-size: 11px; }
+.collaborations-loading, .collaborations-error {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  color: #d2e8e8;
+  font: 400 14px/1.5 Arial, sans-serif;
+  text-align: center;
+}
+.collaborations-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 760px) {
+  .collaborations-stage { min-width: 770px; }
+  .collaborations-note { font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collab-visible { transition: none; }
+}
