@@ -7,7 +7,12 @@
     <title>Pedro Cosme | Physics of flow, waves &amp; chirality</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/research-map.css">
+    <link rel="stylesheet" href="assets/collaborations.css">
     <script src="assets/research-map.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4/dist/d3-geo-projection.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+    <script src="assets/collaborations-map.js" defer></script>
 </head>
 <body class="home-page">
     <div class="container">
@@ -91,6 +96,18 @@
                             </ul>
                         </div>
                     </noscript>
+                </div>
+            </details>
+
+            <details class="collaborations" id="collaborations">
+                <summary><span id="collaborations-title">Collaborations across spacetime</span></summary>
+                <div class="collaborations-panel">
+                    <p class="collaborations-note">Hover over a bubble to discover my collaborators. Click or tap to keep a location open.</p>
+                    <div id="collaborations-map" aria-labelledby="collaborations-title">
+                        <p class="collaborations-loading">Open the panel to explore the map.</p>
+                    </div>
+                    <p class="collaborations-sr">Only coauthors currently active in academia are included; each person is assigned one primary location, as of November 2026.</p>
+                    <noscript><p>This map requires JavaScript. The locations are Lisbon / Caparica, Amsterdam, Utrecht, Cambridge, Karlsruhe and Bangkok.</p></noscript>
                 </div>
             </details>
 
