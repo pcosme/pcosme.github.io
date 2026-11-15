@@ -1,0 +1,136 @@
+{
+  "updated": "2026-11-15",
+  "scope": "Coauthors with an identified active academic affiliation. Each person is assigned one primary location for map counts; ambiguous affiliations are excluded.",
+  "locations": [
+    {
+      "id": "lisbon",
+      "city": "Lisbon / Caparica",
+      "country": "Portugal",
+      "lat": 38.71,
+      "lon": -9.14,
+      "people": [
+        {
+          "name": "Hugo Terças",
+          "affiliation": "ISEL / IPFN"
+        },
+        {
+          "name": "João S. Santos",
+          "affiliation": "IST / CENTRA"
+        },
+        {
+          "name": "João L. Figueirinhas",
+          "affiliation": "IST / CeFEMA"
+        },
+        {
+          "name": "Maria N. de Pinho",
+          "affiliation": "IST / CeFEMA"
+        },
+        {
+          "name": "Marta C. Corvo",
+          "affiliation": "NOVA FCT / CENIMAT-i3N"
+        },
+        {
+          "name": "Miguel P. da Silva",
+          "affiliation": "IST / CeFEMA"
+        },
+        {
+          "name": "Pedro J. Sebastião",
+          "affiliation": "IST / CeFEMA"
+        }
+      ]
+    },
+    {
+      "id": "amsterdam",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "lat": 52.3676,
+      "lon": 4.9041,
+      "people": [
+        {
+          "name": "Isabelle Eisenmann",
+          "affiliation": "University of Amsterdam"
+        },
+        {
+          "name": "Hugo França",
+          "affiliation": "University of Amsterdam"
+        },
+        {
+          "name": "Maria Tătulea-Codrean",
+          "affiliation": "University of Amsterdam"
+        }
+      ],
+      "insetOffset": [
+        -50,
+        -45
+      ]
+    },
+    {
+      "id": "utrecht",
+      "city": "Utrecht",
+      "country": "Netherlands",
+      "lat": 52.0907,
+      "lon": 5.1214,
+      "people": [
+        {
+          "name": "Hannah van Sterkenburg",
+          "affiliation": "Utrecht University"
+        },
+        {
+          "name": "Lars Fritz",
+          "affiliation": "Utrecht University"
+        }
+      ],
+      "insetOffset": [
+        52,
+        -25
+      ]
+    },
+    {
+      "id": "cambridge",
+      "city": "Cambridge",
+      "country": "United Kingdom",
+      "lat": 52.2053,
+      "lon": 0.1218,
+      "people": [
+        {
+          "name": "Maziyar Jalaal",
+          "affiliation": "University of Cambridge / University of Amsterdam"
+        }
+      ],
+      "insetOffset": [
+        -35,
+        22
+      ]
+    },
+    {
+      "id": "karlsruhe",
+      "city": "Karlsruhe",
+      "country": "Germany",
+      "lat": 49.0069,
+      "lon": 8.4037,
+      "people": [
+        {
+          "name": "Emanuele Di Salvo",
+          "affiliation": "Karlsruhe Institute of Technology"
+        }
+      ],
+      "insetOffset": [
+        28,
+        36
+      ]
+    },
+    {
+      "id": "bangkok",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "lat": 13.7563,
+      "lon": 100.5018,
+      "people": [
+        {
+          "name": "Kitinan Pongsangangan",
+          "affiliation": "Mahidol University"
+        }
+      ]
+    }
+  ]
+}
